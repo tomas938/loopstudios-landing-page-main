@@ -28,8 +28,8 @@ window.addEventListener("resize", () => {
 ///////////////////////GSAP/////////////////////////
 gsap.set(".grid__gallery__item", { y: 100 });
 ScrollTrigger.batch(".grid__gallery__item", {
-	interval: 0.1,
-	batchMax: 3,
+	interval: 0.1, // time window (in seconds) for batching to occur.
+	batchMax: 3, // maximum batch size (targets). Can be function-based for dynamic values
 	onEnter: (batch) =>
 		gsap.to(batch, {
 			opacity: 1,
