@@ -2,6 +2,7 @@ const hamburger = document.querySelector(".navigation__hamburger");
 const mobileMenu = document.querySelector(".navigation__mobile");
 const body = document.querySelector("body");
 const ham = document.querySelector("#hamburger-12");
+
 ham.addEventListener("click", () => {
 	ham.classList.toggle("is-active");
 });
@@ -25,133 +26,25 @@ window.addEventListener("resize", () => {
 	}
 });
 ///////////////////////GSAP/////////////////////////
-gsap.registerPlugin(ScrollTrigger);
-gsap.to(".grid__gallery__item-1", {
-	scrollTrigger: {
-		trigger: ".grid__gallery__item-1",
-		start: "0% 80%",
-		end: () => "+=" + document.querySelector(".skill").offsetWidth,
-		end: "50% 80%",
-		scrub: 3,
-
-		toggleActions: "restart pause reverse pause",
-	},
-	opacity: 1,
-	x: 0,
-	rotation: 360,
-	duration: 1,
+gsap.set(".grid__gallery__item", { y: 100 });
+ScrollTrigger.batch(".grid__gallery__item", {
+	interval: 0.1, // time window (in seconds) for batching to occur.
+	batchMax: 3, // maximum batch size (targets). Can be function-based for dynamic values
+	onEnter: (batch) =>
+		gsap.to(batch, {
+			opacity: 1,
+			y: 0,
+			stagger: { each: 0.15, grid: [1, 3] },
+			overwrite: true,
+		}),
+	onLeave: (batch) => gsap.set(batch, { opacity: 0, y: -100, overwrite: true }),
+	onEnterBack: (batch) =>
+		gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
+	onLeaveBack: (batch) =>
+		gsap.set(batch, { opacity: 0, y: 100, overwrite: true }),
+	start: "20px bottom",
+	end: "bottom top",
 });
-gsap.to(".grid__gallery__item-4", {
-	scrollTrigger: {
-		trigger: ".grid__gallery__item-4",
-		start: "0% 80%",
-		// end: () => "+=" + document.querySelector(".skill").offsetWidth,
-		end: "50% 80%",
-		scrub: 3,
-
-		toggleActions: "restart pause reverse pause",
-	},
-	opacity: 1,
-	x: 0,
-	rotation: 360,
-	duration: 1,
-});
-gsap.to(".grid__gallery__item-2", {
-	scrollTrigger: {
-		trigger: ".grid__gallery__item-2",
-		start: "-33% 80%",
-		// end: () => "+=" + document.querySelector(".skill").offsetWidth,
-		end: "50% 80%",
-		scrub: 3,
-		toggleActions: "restart pause reverse pause",
-	},
-	opacity: 1,
-	y: 0,
-	// rotation: 360,
-	duration: 1,
-});
-gsap.to(".grid__gallery__item-3", {
-	scrollTrigger: {
-		trigger: ".grid__gallery__item-3",
-		start: "-33% 80%",
-		// end: () => "+=" + document.querySelector(".skill").offsetWidth,
-		end: "50% 80%",
-		scrub: 3,
-		toggleActions: "restart pause reverse pause",
-	},
-	opacity: 1,
-	y: 0,
-	// rotation: 360,
-	duration: 1,
-});
-gsap.to(".grid__gallery__item-5", {
-	scrollTrigger: {
-		trigger: ".grid__gallery__item-5",
-		start: "-33% 80%",
-		// end: () => "+=" + document.querySelector(".skill").offsetWidth,
-		end: "50% 80%",
-		scrub: 3,
-		toggleActions: "restart pause reverse pause",
-	},
-	opacity: 1,
-	y: 0,
-	// rotation: 360,
-	duration: 1,
-});
-gsap.to(".grid__gallery__item-6", {
-	scrollTrigger: {
-		trigger: ".grid__gallery__item-6",
-		start: "-33% 80%",
-		// end: () => "+=" + document.querySelector(".skill").offsetWidth,
-		end: "50% 80%",
-		scrub: 3,
-		toggleActions: "restart pause reverse pause",
-	},
-	opacity: 1,
-	y: 0,
-	// rotation: 360,
-	duration: 1,
-});
-gsap.to(".grid__gallery__item-7", {
-	scrollTrigger: {
-		trigger: ".grid__gallery__item-7",
-		start: "-33% 80%",
-
-		end: "50% 80%",
-		scrub: 3,
-		toggleActions: "restart pause reverse pause",
-	},
-	opacity: 1,
-	y: 0,
-	// rotation: 360,
-	duration: 1,
-});
-gsap.to(".grid__gallery__item-8", {
-	scrollTrigger: {
-		trigger: ".grid__gallery__item-8",
-		start: "-33% 80%",
-
-		end: "50% 80%",
-		scrub: 3,
-		toggleActions: "restart pause reverse pause",
-	},
-	opacity: 1,
-	y: 0,
-	// rotation: 360,
-	duration: 1,
-});
-// gsap.to(".skill2", {
-// 	scrollTrigger: {
-// 		trigger: ".skill2",
-// 		start: "20% 80%",
-// 		// end: () => "+=" + document.querySelector(".skill").offsetWidth,
-// 		end: "200% 80%",
-// 		scrub: 1,
-// 		markers: true,
-// 		toggleActions: "restart pause reverse pause",
-// 	},
-// 	opacity: 1,
-// 	x: -300,
-// 	rotation: 360,
-// 	duration: 3,
-// });
+ScrollTrigger.addEventListener("refreshInit", () =>
+	gsap.set(".grid__gallery__item", { y: 0 })
+);

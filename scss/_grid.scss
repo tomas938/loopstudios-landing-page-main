@@ -4,14 +4,24 @@
 	@media only screen and (max-width: 375px) {
 		width: 90%;
 	}
+	@media only screen and (max-width: 570px) {
+		margin-top: 40rem;
+	}
 	&__intro {
 		font-family: $josefin;
 		display: flex;
 		justify-content: space-between;
 		color: $black;
+		@media only screen and (max-width: 570px) {
+			display: flex;
+			justify-content: center;
+		}
 		h2 {
 			margin-top: 11.3rem;
 			font-size: 6.4rem;
+			@media only screen and (max-width: 570px) {
+				font-size: 10.4rem;
+			}
 		}
 		a {
 			color: $black;
@@ -24,6 +34,9 @@
 			padding: 1rem 6.4rem;
 			border: 1px solid $black;
 			transition: 0.3s ease-in;
+			@media only screen and (max-width: 570px) {
+				display: none;
+			}
 			&:hover {
 				background: $black;
 				color: $white;
@@ -33,6 +46,8 @@
 	&__gallery {
 		display: grid;
 		grid-template-columns: repeat(4, auto);
+		margin-top: 10.6rem;
+		grid-gap: 4rem;
 		@media only screen and (max-width: 1200px) {
 			grid-template-columns: repeat(2, auto);
 		}
@@ -46,8 +61,6 @@
 		@media only screen and (max-width: 570px) {
 			grid-template-rows: repeat(8, 59rem);
 		}
-		margin-top: 10.6rem;
-		grid-gap: 4rem;
 
 		h3 {
 			width: 24rem;
@@ -57,19 +70,18 @@
 			margin-left: 6rem;
 			margin-top: 47rem;
 			transition: 0.3s ease-in;
+			@media only screen and (max-width: 570px) {
+				margin-top: 42rem;
+				width: 35rem;
+				font-size: 6rem;
+			}
 		}
-
-		&__item-1 {
-			cursor: pointer;
+		&__item {
 			opacity: 0;
-			transform: translateX(-200px);
-			background-image: url(/images/desktop/image-deep-earth.jpg);
+			cursor: pointer;
 			background-repeat: no-repeat;
 			background-size: cover;
 			position: relative;
-			&:hover {
-				color: $black;
-			}
 			.overlay {
 				position: absolute;
 				width: 100%;
@@ -83,150 +95,36 @@
 					}
 				}
 			}
+			&:hover {
+				color: $black;
+			}
+		}
+		&__item-1 {
+			background-image: url(/images/desktop/image-deep-earth.jpg);
 		}
 		&__item-2 {
-			transform: translateY(200px);
-			opacity: 0;
 			background-image: url(/images/desktop/image-night-arcade.jpg);
-			background-repeat: no-repeat;
-			background-size: cover;
-			position: relative;
-			.overlay {
-				position: absolute;
-				width: 100%;
-				background-color: $overlay;
-				height: 100%;
-				&:hover {
-					background-color: rgba(255, 255, 255, 0.603);
-					h3 {
-						color: $black;
-					}
-				}
-			}
 		}
 		&__item-3 {
-			transform: translateY(200px);
-			opacity: 0;
 			background-image: url(/images/desktop/image-soccer-team.jpg);
-			background-repeat: no-repeat;
-			background-size: cover;
-			position: relative;
-
-			.overlay {
-				position: absolute;
-				width: 100%;
-				background-color: $overlay;
-				height: 100%;
-				&:hover {
-					background-color: rgba(255, 255, 255, 0.603);
-					h3 {
-						color: $black;
-					}
-				}
-			}
 		}
 		&__item-4 {
-			transform: translateX(200px);
-			opacity: 0;
 			background-image: url(/images/desktop/image-grid.jpg);
-			background-repeat: no-repeat;
-			background-size: cover;
-			position: relative;
-			.overlay {
-				position: absolute;
-				width: 100%;
-				background-color: $overlay;
-				height: 100%;
-				&:hover {
-					background-color: rgba(255, 255, 255, 0.603);
-					h3 {
-						color: $black;
-					}
-				}
-			}
 			h3 {
 				width: 10rem;
 			}
 		}
 		&__item-5 {
-			opacity: 0;
-			transform: translateY(200px);
 			background-image: url(/images/desktop/image-from-above.jpg);
-			background-repeat: no-repeat;
-			background-size: cover;
-			position: relative;
-			.overlay {
-				position: absolute;
-				width: 100%;
-				background-color: $overlay;
-				height: 100%;
-				&:hover {
-					background-color: rgba(255, 255, 255, 0.603);
-					h3 {
-						color: $black;
-					}
-				}
-			}
 		}
 		&__item-6 {
-			opacity: 0;
-			transform: translateY(200px);
 			background-image: url(/images/desktop/image-pocket-borealis.jpg);
-			background-repeat: no-repeat;
-			background-size: cover;
-			position: relative;
-			.overlay {
-				position: absolute;
-				width: 100%;
-				background-color: $overlay;
-				height: 100%;
-				&:hover {
-					background-color: rgba(255, 255, 255, 0.603);
-					h3 {
-						color: $black;
-					}
-				}
-			}
 		}
 		&__item-7 {
-			opacity: 0;
-			transform: translateY(200px);
 			background-image: url(/images/desktop/image-curiosity.jpg);
-			background-repeat: no-repeat;
-			background-size: cover;
-			position: relative;
-			.overlay {
-				position: absolute;
-				width: 100%;
-				background-color: $overlay;
-				height: 100%;
-				&:hover {
-					background-color: rgba(255, 255, 255, 0.603);
-					h3 {
-						color: $black;
-					}
-				}
-			}
 		}
 		&__item-8 {
-			opacity: 0;
-			transform: translateY(200px);
 			background-image: url(/images/desktop/image-fisheye.jpg);
-			background-repeat: no-repeat;
-			background-size: cover;
-			position: relative;
-			.overlay {
-				position: absolute;
-				width: 100%;
-				background-color: $overlay;
-				height: 100%;
-				&:hover {
-					background-color: rgba(255, 255, 255, 0.603);
-					h3 {
-						color: $black;
-					}
-				}
-			}
 		}
 	}
 }

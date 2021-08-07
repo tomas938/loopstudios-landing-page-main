@@ -177,6 +177,7 @@ html {
   }
 }
 
+html,
 body {
   overflow-x: hidden;
 }
@@ -238,7 +239,7 @@ header .navigation__logo svg {
 }
 
 header .navigation__mobile {
-  height: 100%;
+  height: 110vh;
   width: 100%;
   background: black;
   position: fixed;
@@ -509,7 +510,7 @@ header .rectangle h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 13rem 13rem 0 13rem;
+  padding: 13rem 0rem 0 13rem;
   margin-top: -42rem;
   margin-left: 76rem;
   width: 82.6rem;
@@ -538,18 +539,50 @@ header .rectangle h1 {
   }
 }
 
+@media only screen and (max-width: 570px) {
+  .right h2 {
+    width: 80%;
+    margin: auto;
+    font-size: 8.2rem;
+  }
+}
+
 .right p {
+  text-align: left;
+  color: #8c8c8c;
   margin-top: 4.4rem;
-  line-height: 3rem;
-  width: 70%;
-  font-size: 2rem;
+  line-height: 3.5rem;
+  width: 80%;
+  font-size: 2.2rem;
   font-family: "Alata", sans-serif;
+}
+
+@media only screen and (max-width: 900px) {
+  .right p {
+    font-size: 2.4rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .right p {
+    font-size: 2.8rem;
+    line-height: 4rem;
+  }
 }
 
 @media only screen and (max-width: 570px) {
   .right p {
     width: 80%;
     margin: auto;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .right p {
+    margin-top: 2rem;
+    font-size: 4.5rem;
+    line-height: 7rem;
   }
 }
 
@@ -564,6 +597,12 @@ header .rectangle h1 {
   }
 }
 
+@media only screen and (max-width: 570px) {
+  .grid {
+    margin-top: 40rem;
+  }
+}
+
 .grid__intro {
   font-family: "Josefin Sans", sans-serif;
   display: -webkit-box;
@@ -575,9 +614,26 @@ header .rectangle h1 {
   color: black;
 }
 
+@media only screen and (max-width: 570px) {
+  .grid__intro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .grid__intro h2 {
   margin-top: 11.3rem;
   font-size: 6.4rem;
+}
+
+@media only screen and (max-width: 570px) {
+  .grid__intro h2 {
+    font-size: 10.4rem;
+  }
 }
 
 .grid__intro a {
@@ -598,6 +654,12 @@ header .rectangle h1 {
   transition: 0.3s ease-in;
 }
 
+@media only screen and (max-width: 570px) {
+  .grid__intro a {
+    display: none;
+  }
+}
+
 .grid__intro a:hover {
   background: black;
   color: white;
@@ -608,10 +670,10 @@ header .rectangle h1 {
   display: grid;
   -ms-grid-columns: (auto)[4];
       grid-template-columns: repeat(4, auto);
-  -ms-grid-rows: (59rem)[2];
-      grid-template-rows: repeat(2, 59rem);
   margin-top: 10.6rem;
   grid-gap: 4rem;
+  -ms-grid-rows: (59rem)[2];
+      grid-template-rows: repeat(2, 59rem);
 }
 
 @media only screen and (max-width: 1200px) {
@@ -653,22 +715,23 @@ header .rectangle h1 {
   transition: 0.3s ease-in;
 }
 
-.grid__gallery__item-1 {
-  cursor: pointer;
+@media only screen and (max-width: 570px) {
+  .grid__gallery h3 {
+    margin-top: 42rem;
+    width: 35rem;
+    font-size: 6rem;
+  }
+}
+
+.grid__gallery__item {
   opacity: 0;
-  -webkit-transform: translateX(-200px);
-          transform: translateX(-200px);
-  background-image: url(/images/desktop/image-deep-earth.jpg);
+  cursor: pointer;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
 
-.grid__gallery__item-1:hover {
-  color: black;
-}
-
-.grid__gallery__item-1 .overlay {
+.grid__gallery__item .overlay {
   position: absolute;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.425);
@@ -677,87 +740,32 @@ header .rectangle h1 {
   transition: 0.3s ease-in;
 }
 
-.grid__gallery__item-1 .overlay:hover {
+.grid__gallery__item .overlay:hover {
   background-color: rgba(255, 255, 255, 0.603);
 }
 
-.grid__gallery__item-1 .overlay:hover h3 {
+.grid__gallery__item .overlay:hover h3 {
   color: black;
+}
+
+.grid__gallery__item:hover {
+  color: black;
+}
+
+.grid__gallery__item-1 {
+  background-image: url(/images/desktop/image-deep-earth.jpg);
 }
 
 .grid__gallery__item-2 {
-  -webkit-transform: translateY(200px);
-          transform: translateY(200px);
-  opacity: 0;
   background-image: url(/images/desktop/image-night-arcade.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.grid__gallery__item-2 .overlay {
-  position: absolute;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.425);
-  height: 100%;
-}
-
-.grid__gallery__item-2 .overlay:hover {
-  background-color: rgba(255, 255, 255, 0.603);
-}
-
-.grid__gallery__item-2 .overlay:hover h3 {
-  color: black;
 }
 
 .grid__gallery__item-3 {
-  -webkit-transform: translateY(200px);
-          transform: translateY(200px);
-  opacity: 0;
   background-image: url(/images/desktop/image-soccer-team.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.grid__gallery__item-3 .overlay {
-  position: absolute;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.425);
-  height: 100%;
-}
-
-.grid__gallery__item-3 .overlay:hover {
-  background-color: rgba(255, 255, 255, 0.603);
-}
-
-.grid__gallery__item-3 .overlay:hover h3 {
-  color: black;
 }
 
 .grid__gallery__item-4 {
-  -webkit-transform: translateX(200px);
-          transform: translateX(200px);
-  opacity: 0;
   background-image: url(/images/desktop/image-grid.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.grid__gallery__item-4 .overlay {
-  position: absolute;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.425);
-  height: 100%;
-}
-
-.grid__gallery__item-4 .overlay:hover {
-  background-color: rgba(255, 255, 255, 0.603);
-}
-
-.grid__gallery__item-4 .overlay:hover h3 {
-  color: black;
 }
 
 .grid__gallery__item-4 h3 {
@@ -765,103 +773,19 @@ header .rectangle h1 {
 }
 
 .grid__gallery__item-5 {
-  opacity: 0;
-  -webkit-transform: translateY(200px);
-          transform: translateY(200px);
   background-image: url(/images/desktop/image-from-above.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.grid__gallery__item-5 .overlay {
-  position: absolute;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.425);
-  height: 100%;
-}
-
-.grid__gallery__item-5 .overlay:hover {
-  background-color: rgba(255, 255, 255, 0.603);
-}
-
-.grid__gallery__item-5 .overlay:hover h3 {
-  color: black;
 }
 
 .grid__gallery__item-6 {
-  opacity: 0;
-  -webkit-transform: translateY(200px);
-          transform: translateY(200px);
   background-image: url(/images/desktop/image-pocket-borealis.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.grid__gallery__item-6 .overlay {
-  position: absolute;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.425);
-  height: 100%;
-}
-
-.grid__gallery__item-6 .overlay:hover {
-  background-color: rgba(255, 255, 255, 0.603);
-}
-
-.grid__gallery__item-6 .overlay:hover h3 {
-  color: black;
 }
 
 .grid__gallery__item-7 {
-  opacity: 0;
-  -webkit-transform: translateY(200px);
-          transform: translateY(200px);
   background-image: url(/images/desktop/image-curiosity.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.grid__gallery__item-7 .overlay {
-  position: absolute;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.425);
-  height: 100%;
-}
-
-.grid__gallery__item-7 .overlay:hover {
-  background-color: rgba(255, 255, 255, 0.603);
-}
-
-.grid__gallery__item-7 .overlay:hover h3 {
-  color: black;
 }
 
 .grid__gallery__item-8 {
-  opacity: 0;
-  -webkit-transform: translateY(200px);
-          transform: translateY(200px);
   background-image: url(/images/desktop/image-fisheye.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.grid__gallery__item-8 .overlay {
-  position: absolute;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.425);
-  height: 100%;
-}
-
-.grid__gallery__item-8 .overlay:hover {
-  background-color: rgba(255, 255, 255, 0.603);
-}
-
-.grid__gallery__item-8 .overlay:hover h3 {
-  color: black;
 }
 
 footer {
