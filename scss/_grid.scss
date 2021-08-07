@@ -1,4 +1,5 @@
 .grid {
+	height: 200vh;
 	width: 77.5%;
 	margin: auto;
 	@media only screen and (max-width: 375px) {
@@ -8,6 +9,7 @@
 		margin-top: 40rem;
 	}
 	&__intro {
+		margin-top: 100vh;
 		font-family: $josefin;
 		display: flex;
 		justify-content: space-between;
@@ -115,15 +117,35 @@
 			}
 		}
 		&__item-5 {
+<<<<<<< HEAD
+=======
+			opacity: 0;
+			transform: translateY(100px);
+>>>>>>> 062959b2e1b8d88ed5b065097b52c17db42dda83
 			background-image: url(/images/desktop/image-from-above.jpg);
 		}
 		&__item-6 {
+<<<<<<< HEAD
+=======
+			opacity: 0;
+			transform: translateY(100px);
+>>>>>>> 062959b2e1b8d88ed5b065097b52c17db42dda83
 			background-image: url(/images/desktop/image-pocket-borealis.jpg);
 		}
 		&__item-7 {
+<<<<<<< HEAD
+=======
+			opacity: 0;
+			transform: translateY(100px);
+>>>>>>> 062959b2e1b8d88ed5b065097b52c17db42dda83
 			background-image: url(/images/desktop/image-curiosity.jpg);
 		}
 		&__item-8 {
+<<<<<<< HEAD
+=======
+			opacity: 0;
+			transform: translateY(100px);
+>>>>>>> 062959b2e1b8d88ed5b065097b52c17db42dda83
 			background-image: url(/images/desktop/image-fisheye.jpg);
 		}
 	}
